@@ -59,9 +59,7 @@ if (!isset($_SESSION['user_login'])) {
         background-color: #E0E0E0;
     }
 
-    .dropdown-menu ul{
-        background-color: #32CD32;
-    }
+    
     @media (max-width: 820px) {
 
         /* mobile */
@@ -322,15 +320,15 @@ if (!isset($_SESSION['user_login'])) {
         }
         ?>
         <?php
-        $sql = $pdo->prepare("SELECT orderitem.item_quantity,item.item_name,item.item_price,order.order_date
-        FROM `order`
-        INNER JOIN orderitem
+        $sql = $pdo->prepare("SELECT `orderitem`.item_quantity,`item`.item_name,`item`.item_price,`order`.order_date 
+        FROM `order` 
+        INNER JOIN `orderitem`
         ON `order`.order_id = orderitem.order_id 
-        INNER JOIN `member`
-        ON member.member_id = order.member_id
-        INNER JOIN `item`
-        ON orderitem.item_id = item.item_id
-        WHERE `member`.member_id=$member_id
+        INNER JOIN `member` 
+        ON `member`.member_id = `order`.member_id 
+        INNER JOIN `item` 
+        ON `orderitem`.item_id = `item`.item_id 
+        WHERE `order`.order_date  BETWEEN '2022-01-01 00:00:00' AND '2022-04-30 00:00:00' and `member`.member_id=$member_id 
         ORDER BY order_date DESC ");
         $sql->execute();
 
@@ -396,7 +394,7 @@ if (!isset($_SESSION['user_login'])) {
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 วันที่ซื้อสินค้า
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                 <li><a class="dropdown-item" href="./history.php">ทั้งหมด</a></li>
                                 <li><a class="dropdown-item" href="./hitstory1-4.php">มกราคม-เมษายน</a></li>
                                 <li><a class="dropdown-item" href="./history5-8.php">พฤษภาคม-สิงหาคม</a></li>

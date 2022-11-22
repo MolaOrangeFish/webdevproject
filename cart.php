@@ -21,25 +21,347 @@ if (!isset($_SESSION['user_login'])) {
         background-color: #E0E0E0;
     }
 
+    img {
+        max-width: 200px;
+    }
     @media (max-width: 820px) {
-
         /* mobile */
         .header {
-            background-color: #28A4FF;
             margin: 0px;
+            padding: 20px 50px 130px 0px;
+            font-size: 20px;
+            color: #FFFFFF;
+            background-color: #2C73C9;
+            width: 100%;
         }
+        .container-left img {
+            max-width: 150px;
+        }
+        #container-left {
+            float: left;
+            width: 70%;
+        }
+
+        #container-left img {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #container-right {
+            text-align: right;
+            float: right;
+            width: 30%;
+        }
+        .button-logout a:link,
+        a:visited {
+            background-color: #FF5C5C;
+            padding: 5px 10px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 3px;
+            color: #FFFFFF;
+            margin-top: 10px;
+
+        }
+
+        .button-logout a:hover {
+            background-color: #CD5C5C;
+        }
+
+        .button-cart a.cart:link,
+        a.cart:visited {
+            background-color: #32CD32;
+            padding: 5px 115px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 3px;
+            color: #FFFFFF;
+            margin-top: 5px;
+        }
+        /* -------------- cart ----------------*/
+        .box-container {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;  
+            width: 40%;
+        }
+        .items {
+            display: flex;
+            justify-content: center;
+        }
+
+        .items .box-container .box {
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px #BEBEBE;
+            border: 2px solid #000000;
+            position: relative;
+            padding: 20px 25px 20px 20px;
+            max-width: 250px;
+            margin: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .items .box-container .box .add-to-cart {
+            border: none;
+            border-radius: 3px;
+            background-color: #28A4FF;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .items .box-container .box .add-to-cart:hover {
+            background-color: #87CEEB;
+        }
+
+        .items .box-container .box input[type="number"] {
+            width: 100%;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            color: #000000;
+            padding: 5px 5px 5px 10px;
+            margin: 5px 0px;
+        }
+
+        #sum_price {
+            margin: 10px;
+            color: #28A4FF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .shopping-cart {
+            padding: 20px 50px 10px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shopping-cart table {
+            width: 60%;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px #BEBEBE;
+            border: 2px solid #000000;
+            background-color: #FFFFFF;
+        }
+
+        .shopping-cart table thead {
+            background-color: #2C3E50;
+        }
+
+        .shopping-cart table thead th {
+            padding: 10px;
+            color: #FFFFFF;
+            font-size: 20px;
+        }
+
+        .table-button {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        h3 .choose {
+            font-size: 20px;
+        }
+        /* --------------- navbar -------------------*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            width: 100%;
+        }
+        li a {
+            display: block;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+
     }
 
-    @media (max-width: 1049.99px) {
-
+    @media (min-width: 820px) and (max-width: 1024px){
         /* tablet */
+        body {
+            display: block;
+        }
+        
         .header {
-            background-color: #28A4FF;
             margin: 0px;
+            padding: 20px 50px 100px 0px;
+            font-size: 20px;
+            color: #FFFFFF;
+            background-color: #2C73C9;
+            width: 100%;
+        }
+
+        #container-left {
+            float: left;
+            width: 70%;
+        }
+
+        #container-left img {
+
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        #container-right {
+            text-align: right;
+            float: right;
+            width: 30%;
+        }
+        .button-logout a:link,
+        a:visited {
+            background-color: #FF5C5C;
+            padding: 5px 10px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 3px;
+            color: #FFFFFF;
+            margin-top: 10px;
+
+        }
+
+        .button-logout a:hover {
+            background-color: #CD5C5C;
+        }
+
+        .button-cart a.cart:link,
+        a.cart:visited {
+            background-color: #32CD32;
+            padding: 5px 115px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            border-radius: 3px;
+            color: #FFFFFF;
+            margin-top: 5px;
+        }
+        /* -------------- cart ----------------*/
+        .box-container {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;  
+            width: 40%;
+        }
+        .items {
+            display: flex;
+            justify-content: center;
+        }
+
+        .items .box-container .box {
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px #BEBEBE;
+            border: 2px solid #000000;
+            position: relative;
+            padding: 20px 25px 20px 20px;
+            max-width: 250px;
+            margin: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .items .box-container .box .add-to-cart {
+            border: none;
+            border-radius: 3px;
+            background-color: #28A4FF;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .items .box-container .box .add-to-cart:hover {
+            background-color: #87CEEB;
+        }
+
+        .items .box-container .box input[type="number"] {
+            width: 100%;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            color: #000000;
+            padding: 5px 5px 5px 10px;
+            margin: 5px 0px;
+        }
+
+        #sum_price {
+            margin: 10px;
+            color: #28A4FF;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .shopping-cart {
+            padding: 20px 50px 10px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shopping-cart table {
+            width: 60%;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 10px #BEBEBE;
+            border: 2px solid #000000;
+            background-color: #FFFFFF;
+        }
+
+        .shopping-cart table thead {
+            background-color: #2C3E50;
+        }
+
+        .shopping-cart table thead th {
+            padding: 10px;
+            color: #FFFFFF;
+            font-size: 20px;
+        }
+
+        .table-button {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        h3 .choose {
+            font-size: 20px;
+        }
+
+        /* ------------- navbar ----------------*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            width: 100%;
+        }
+        li a {
+            display: block;
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
         }
     }
 
-    @media(min-width: 1050px) {
+    @media (min-width: 1024px){
 
         /* laptop */
         .header {
@@ -94,10 +416,6 @@ if (!isset($_SESSION['user_login'])) {
             border-radius: 3px;
             color: #FFFFFF;
             margin-top: 5px;
-        }
-
-        img {
-            max-width: 200px;
         }
 
         .items {
@@ -201,7 +519,7 @@ if (!isset($_SESSION['user_login'])) {
         }
 
         li a {
-            display: block;
+            display: flex;
             color: white;
             text-align: center;
             padding: 14px 16px;
@@ -211,6 +529,17 @@ if (!isset($_SESSION['user_login'])) {
         /* Change the link color to #111 (black) on hover */
         li a:hover {
             background-color: #111;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        li a:hover {
+            background-color: #111;
+        }
+
+        .choose {
+            margin-top: 20px;
+            font-size: 25px;
+            text-align: center;
         }
     }
 </style>
@@ -227,7 +556,7 @@ if (!isset($_SESSION['user_login'])) {
     <!-- header -->
     <div class="header">
         <div id="container-left">
-            <img src="logo.png" style="width: 400px;">
+            <img src="logo.png">
         </div>
         <div id="container-right">
             <label>account : </label> <?php echo $row['member_name']; ?></a>
@@ -402,7 +731,10 @@ if (!isset($_SESSION['user_login'])) {
     } else {
         if (!isset($_COOKIE["order"])) {
             ?>
-            <h3 class="choose">เลือกสินค้าก่อน</h3>
+            <div class="choose">
+                <p>เลือกสินค้าก่อน</p>
+            </div>
+            
             <?php
         } else {
             function submit()

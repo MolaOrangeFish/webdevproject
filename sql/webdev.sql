@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2022 at 06:30 AM
+-- Generation Time: Nov 22, 2022 at 01:08 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -58,23 +58,25 @@ CREATE TABLE `member` (
   `member_email` varchar(50) NOT NULL,
   `member_province` varchar(20) NOT NULL DEFAULT 'กรุงเทพมหานคร',
   `password` varchar(20) NOT NULL,
-  `member_id` int(11) NOT NULL
+  `member_id` int(11) NOT NULL,
+  `urole` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `member`
 --
 
-INSERT INTO `member` (`member_name`, `member_tel`, `member_email`, `member_province`, `password`, `member_id`) VALUES
-('Kulrat', '0944989329', 'kulrat_kik@gmail.com', 'กรุงเทพมหานคร', '1234', 1),
-('MM', '0944989320', 'MM@gmail.com', 'กรุงเทพมหานคร', '1234', 2),
-('Pakteema', '0814036864', 'baitong@gmail.com', 'กรุงเทพมหานคร', '1234', 3),
-('Prinyada', '0623565845', 'prinyadapinn@gmail.com', 'กรุงเทพมหานคร', '1234', 4),
-('Ruethairat', '0800533569', 'rtrmay@gmail.com', 'กรุงเทพมหานคร', '1234', 5),
-('Suwanna', '0645983619', 'swanjui@gmail.com', 'กรุงเทพมหานคร', '1234', 6),
-('ff', '0876754321', 'ff@gmail.com', 'กรุงเทพมหานคร', '1234', 7),
-('kittichet', '1234', 'kittichetadulroj@gmail.com', 'กรุงเทพมหานคร', '1234', 8),
-('asda', '1111', 'asd@yahoo.com', 'ตรัง', '1234', 9);
+INSERT INTO `member` (`member_name`, `member_tel`, `member_email`, `member_province`, `password`, `member_id`, `urole`) VALUES
+('Kulrat', '0944989329', 'kulrat_kik@gmail.com', 'กรุงเทพมหานคร', '1234', 1, 'user'),
+('MM', '0944989320', 'MM@gmail.com', 'กรุงเทพมหานคร', '1234', 2, 'user'),
+('Pakteema', '0814036864', 'baitong@gmail.com', 'กรุงเทพมหานคร', '1234', 3, 'user'),
+('Prinyada', '0623565845', 'prinyadapinn@gmail.com', 'กรุงเทพมหานคร', '1234', 4, 'user'),
+('Ruethairat', '0800533569', 'rtrmay@gmail.com', 'กรุงเทพมหานคร', '1234', 5, 'user'),
+('Suwanna', '0645983619', 'swanjui@gmail.com', 'กรุงเทพมหานคร', '1234', 6, 'user'),
+('ff', '0876754321', 'ff@gmail.com', 'กรุงเทพมหานคร', '1234', 7, 'user'),
+('kittichet', '1234', 'kittichetadulroj@gmail.com', 'กรุงเทพมหานคร', '1234', 8, 'user'),
+('asda', '1111', 'asd@yahoo.com', 'ตรัง', '1234', 9, 'user'),
+('admin', '00000', 'admin@gmail.com', 'กรุงเทพมหานคร', 'admin', 11, 'admin');
 
 -- --------------------------------------------------------
 
@@ -98,11 +100,11 @@ INSERT INTO `order` (`order_date`, `member_id`, `order_id`) VALUES
 ('2022-10-11 21:29:38', 5, 3),
 ('2022-10-12 21:29:33', 4, 4),
 ('2022-10-26 21:29:15', 3, 5),
-('2022-11-01 13:21:49', 1, 6),
-('2022-11-02 08:41:35', 1, 7),
-('2022-11-02 08:46:41', 1, 8),
-('2022-11-02 08:48:12', 1, 9),
-('2022-11-02 08:54:30', 1, 10),
+('2022-10-21 13:21:49', 1, 6),
+('2022-10-19 08:41:35', 1, 7),
+('2022-10-24 08:46:41', 1, 8),
+('2022-10-12 08:48:12', 1, 9),
+('2022-10-12 08:54:30', 1, 10),
 ('2022-11-02 08:54:42', 1, 11),
 ('2022-11-02 08:55:41', 1, 12),
 ('2022-11-02 08:58:22', 2, 13),
@@ -116,7 +118,27 @@ INSERT INTO `order` (`order_date`, `member_id`, `order_id`) VALUES
 ('2022-11-02 10:20:55', 2, 21),
 ('2022-11-02 10:23:27', 2, 22),
 ('2022-11-17 05:52:46', 2, 23),
-('2022-11-17 06:29:44', 9, 24);
+('2022-11-17 06:29:44', 9, 24),
+('2022-11-18 15:45:48', 1, 25),
+('2022-11-22 11:04:10', 7, 26),
+('2022-11-22 11:56:09', 8, 27),
+('2022-11-22 12:09:19', 8, 28),
+('2022-11-22 12:31:16', 8, 29),
+('2022-11-22 12:31:21', 8, 30),
+('2022-11-22 12:31:28', 8, 31),
+('2022-11-22 12:33:51', 8, 32),
+('2022-11-22 12:35:22', 8, 33),
+('2022-11-22 12:37:05', 8, 34),
+('2022-11-22 12:37:24', 8, 35),
+('2022-11-22 12:38:31', 8, 36),
+('2022-11-22 12:41:04', 8, 37),
+('2022-11-22 12:46:16', 8, 38),
+('2022-11-22 12:48:25', 8, 39),
+('2022-11-22 12:57:20', 8, 40),
+('2022-11-22 12:57:34', 8, 41),
+('2022-11-22 12:59:42', 8, 42),
+('2022-11-22 13:02:31', 7, 43),
+('2022-11-22 13:07:02', 7, 44);
 
 -- --------------------------------------------------------
 
@@ -135,18 +157,19 @@ CREATE TABLE `orderitem` (
 --
 
 INSERT INTO `orderitem` (`item_id`, `order_id`, `item_quantity`) VALUES
-('001', 1, 0),
-('001', 2, 0),
-('001', 3, 0),
 ('001', 8, 1),
 ('001', 10, 3),
 ('001', 14, 3),
 ('001', 15, 1),
 ('001', 19, 2),
 ('001', 22, 2),
-('002', 1, 0),
-('002', 3, 0),
-('002', 4, 0),
+('001', 25, 1),
+('001', 27, 4),
+('001', 28, 1),
+('001', 29, 1),
+('001', 32, 1),
+('001', 38, 1),
+('001', 44, 1),
 ('002', 9, 4),
 ('002', 12, 1),
 ('002', 13, 1),
@@ -155,8 +178,13 @@ INSERT INTO `orderitem` (`item_id`, `order_id`, `item_quantity`) VALUES
 ('002', 22, 10),
 ('002', 23, 1),
 ('002', 24, 1),
-('003', 4, 0),
-('003', 5, 0),
+('002', 28, 1),
+('002', 30, 1),
+('002', 34, 1),
+('002', 39, 1),
+('002', 40, 1),
+('002', 41, 1),
+('002', 42, 1),
 ('003', 6, 1),
 ('003', 7, 1),
 ('003', 11, 1),
@@ -164,11 +192,22 @@ INSERT INTO `orderitem` (`item_id`, `order_id`, `item_quantity`) VALUES
 ('003', 16, 1),
 ('003', 20, 2),
 ('003', 21, 2),
-('004', 1, 0),
-('004', 4, 0),
-('004', 14, 1),
-('005', 2, 0),
-('005', 5, 0);
+('003', 25, 1),
+('003', 26, 10),
+('003', 28, 1),
+('003', 31, 4),
+('003', 32, 1),
+('003', 33, 2),
+('003', 35, 1),
+('003', 36, 1),
+('003', 37, 1),
+('003', 41, 1),
+('003', 43, 1),
+('004', 26, 17),
+('004', 28, 1),
+('004', 32, 1),
+('004', 43, 1),
+('005', 28, 1);
 
 --
 -- Indexes for dumped tables
@@ -208,13 +247,13 @@ ALTER TABLE `orderitem`
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- Constraints for dumped tables

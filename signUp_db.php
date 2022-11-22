@@ -10,6 +10,7 @@
         $province = $_POST["province"];
         $password = $_POST["password"];
         $c_password = $_POST["c_password"];
+        $urole = 'user';
 
         // check ว่าทุกตัวมีการกรอกเข้ามาครบมั้ย
         if(empty($username)){
@@ -50,12 +51,13 @@
                     header('location: signUp.php');
                 }
                 else if(!isset($_SESSION['error'])){
-                    $stmt = $pdo->prepare("INSERT INTO member (member_name,member_tel,member_email,member_province,`password`) VALUES (?,?,?,?,?)");
+                    $stmt = $pdo->prepare("INSERT INTO member (member_name,member_tel,member_email,member_province,`password`,`urole`) VALUES (?,?,?,?,?,?)");
                     $stmt->bindParam(1, $_POST["member_name"]);
                     $stmt->bindParam(2, $_POST["member_tel"]);
                     $stmt->bindParam(3, $_POST["member_email"]);
                     $stmt->bindParam(4, $_POST["province"]);
                     $stmt->bindParam(5, $_POST["password"]);
+                    $stmt->bindParam(6, $urole);
                     $stmt->execute();
                     $_SESSION['success'] = "สมัครสมาชิกเรียบร้อยแล้ว <a href='signIn.php' class='alert-link'>เข้าสู่ระบบ</a>";
                     header('location: signUp.php');
